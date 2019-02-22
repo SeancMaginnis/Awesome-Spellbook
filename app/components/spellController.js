@@ -26,11 +26,14 @@ function drawSpellbook() {
     document.querySelector('#my-spellbook').innerHTML = template
 }
 
+
+
 export default class SpellController {
     constructor() {
         _ss.addSubscriber('spellsApi', drawSpellApi)
         _ss.addSubscriber('activeSpell', drawActiveSpell)
         _ss.addSubscriber('mySpellBook', drawSpellbook)
+        _ss.getMySpellBook()
         _ss.getSpellData()
     }
 
@@ -45,4 +48,7 @@ export default class SpellController {
     addSpell() {
         _ss.addSpell()
     }
+    //     deleteSpell() {
+    //         _ss.deleteSpell()
+    //     }
 }
